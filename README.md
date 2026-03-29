@@ -123,7 +123,7 @@ NMF decomposes the user-item matrix (6040 × 897) into 20 latent factors per mov
 
 ![Cluster Distribution](Results/Graphs/k_means_clustering_results.png)
 
-![Cluster Similarity Analysis](Results/Graphs/cluster_similarity_analysis.png)
+
 
 | Group | Movies | Distance | Similarity | Prediction |
 |---|---|---|---|---|
