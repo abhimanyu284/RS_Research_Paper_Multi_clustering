@@ -302,7 +302,7 @@ Recommendations for Toy Story broken down by all 8 feature categories replicatin
 - Primary proposed NB model within 1.66% accuracy of paper
 
 **Why small differences exist:**
-- WMF replaced by NMF for computational efficiency — same purpose, runs in 7.2 seconds vs 60+ minutes
+- WMF replaced by NMF for computational efficiency — same purpose, runs more efficiently producing almost the same results
 - MovieLens 1M added for user ratings — paper does not name its rating source
 - IMDB 50K reviews used for classifier — paper does not name its review dataset
 - Random Forest recall of 1.0 in paper is not reproducible — likely data leakage in original paper
