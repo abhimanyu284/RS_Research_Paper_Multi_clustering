@@ -24,7 +24,12 @@ This project replicates the multi-clustering based collaborative movie recommend
 RS_Research_Paper_Multi_clustering/
 │
 ├── Dataset/
-│
+│   └── tmdb_5000_movies.csv
+│   └── tmdb_5000_credits.csv (link)
+│   └── movielens1m
+│           └── ratings.dat
+│           └── movies.dat
+│   └── IMDB 50K Review.csv (link)
 ├── Documents/
 │   └── RS_Project_Documentation.docx
 │
