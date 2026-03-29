@@ -23,40 +23,34 @@ This project replicates the multi-clustering based collaborative movie recommend
 ```
 RS_Research_Paper_Multi_clustering/
 │
-├── assets/
-│   ├── 1_dataset_overview.png
-│   ├── 2_feature_distribution.png
-│   ├── 3_matrix_factorization_analysis.png
-│   ├── 4_cluster_distribution.png
-│   ├── 5_cluster_similarity_analysis.png
-│   ├── 6_knn_recommendations.png
-│   ├── 7_figure7_category_recommendations.png
-│   ├── 8_classifier_comparison.png
-│   ├── 9_precision_recall_auc.png
-│   ├── 10_table2_cluster_similarity.png
-│   ├── 11_toy_story_recommendations_output.png
-│   ├── 12_classifier_raw_results.png
-│   ├── 13_threshold_tuning.png
-│   ├── 14_final_comparison_table3.png
-│   └── 15_project_replication_report.png
+├── Dataset/
 │
-├── results/
-│   ├── main_table/
-│   │   ├── 10_table2_cluster_similarity.png
-│   │   └── 14_final_comparison_table3.png
-│   │
-│   ├── graphs/
-│   │   ├── 1_dataset_overview.png
-│   │   ├── 4_cluster_distribution.png
-│   │   ├── 5_cluster_similarity_analysis.png
-│   │   ├── 6_knn_recommendations.png
-│   │   └── 8_classifier_comparison.png
-│   │
-│   └── summary/
-│       └── 15_project_replication_report.png
+├── Documents/
+│   └── RS_Project_Documentation.docx
 │
-├── RS_Mini_Project.ipynb
-├── RS_Project_Documentation.docx
+├── Results/
+│   ├── Graphs/
+│   │   ├── dataset_overview.png
+│   │   ├── Feature_distribution.png
+│   │   ├── matrix_factorization_analysis.png
+│   │   ├── k_means_clustering_results.png
+│   │   ├── cluster_similarity_analysis.png
+│   │   ├── knn_recommendation.png
+│   │   ├── category_recommendation.png
+│   │   ├── Classifier_comparison.png
+│   │   └── precision_recall_auc.png
+│   │
+│   └── Main Tables/
+│       ├── cluster_similarity_table.png
+│       ├── toy_story_recommendation_output_table.png
+│       ├── classifier_raw_reults_table.png
+│       ├── classifier_tuning_table.png
+│       ├── final_comparison_table.png
+│       └── project_report_table.png
+│
+├── Src/
+│   └── RS_Mini_Project.ipynb
+│
 ├── requirements.txt
 └── README.md
 ```
@@ -71,7 +65,7 @@ RS_Research_Paper_Multi_clustering/
 | MovieLens 1M | 1,000,209 ratings, 6,040 users | User ratings and collaborative filtering signal |
 | IMDB 50K Reviews | 50,000 reviews, balanced | Sentiment classifier training and evaluation |
 
-![Dataset Overview](assets/1_dataset_overview.png)
+![Dataset Overview](Results/Graphs/dataset_overview.png)
 
 **Download Links:**
 - TMDB 5000: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
@@ -99,22 +93,22 @@ TMDB 5000 Movies + Credits
 ```
 
 **8 Features Extracted:**
-- Genres, Cast, Director, Keywords, Production, Country, Sequel, Voting Count
+Genres, Cast, Director, Keywords, Production, Country, Sequel, Voting Count
 
 **Combined Feature Vector:**
-- 50 TF-IDF dims (content) + 20 NMF dims (collaborative) + 3 numeric dims = **73 dimensions per movie**
+50 TF-IDF dims + 20 NMF dims + 3 numeric dims = **73 dimensions per movie**
 
 ---
 
 ## 1. Feature Distribution
 
-![Feature Distribution](assets/2_feature_distribution.png)
+![Feature Distribution](Results/Graphs/Feature_distribution.png)
 
 ---
 
 ## 2. Matrix Factorization — NMF
 
-![Matrix Factorization](assets/3_matrix_factorization_analysis.png)
+![Matrix Factorization](Results/Graphs/matrix_factorization_analysis.png)
 
 NMF decomposes the user-item matrix (6040 × 897) into 20 latent factors per movie capturing hidden user preference patterns. Completed in **7.2 seconds**.
 
@@ -122,9 +116,9 @@ NMF decomposes the user-item matrix (6040 × 897) into 20 latent factors per mov
 
 ## 3. Clustering Results — Table 2 Replication
 
-![Cluster Distribution](assets/4_cluster_distribution.png)
+![Cluster Distribution](Results/Graphs/k_means_clustering_results.png)
 
-![Cluster Similarity Analysis](assets/5_cluster_similarity_analysis.png)
+![Cluster Similarity Analysis](Results/Graphs/cluster_similarity_analysis.png)
 
 | Group | Movies | Distance | Similarity | Prediction |
 |---|---|---|---|---|
@@ -147,9 +141,7 @@ NMF decomposes the user-item matrix (6040 × 897) into 20 latent factors per mov
 | 14 | 15 | 0.597096 | 0.568837 | 0.542114 |
 | 13 | 97 | 0.716654 | 0.468131 | 0.452656 |
 
-**Full Table 2 Output:**
-
-![Table 2 Output](assets/10_table2_cluster_similarity.png)
+![Table 2 Output](Results/Main%20Tables/cluster_similarity_table.png)
 
 **Key Observations:**
 - Group 7 has highest similarity (0.817) — tightest and most coherent cluster
@@ -160,9 +152,9 @@ NMF decomposes the user-item matrix (6040 × 897) into 20 latent factors per mov
 
 ## 4. Recommendation Engine Results
 
-![KNN Recommendations](assets/6_knn_recommendations.png)
+![KNN Recommendations](Results/Graphs/knn_recommendation.png)
 
-![Toy Story Recommendations Output](assets/11_toy_story_recommendations_output.png)
+![Toy Story Recommendations Output](Results/Main%20Tables/toy_story_recommendation_output_table.png)
 
 **Sample — Toy Story Recommendations (Cluster 14):**
 
@@ -183,7 +175,7 @@ NMF decomposes the user-item matrix (6040 × 897) into 20 latent factors per mov
 
 ## 5. Figure 7 — Category Based Recommendations
 
-![Figure 7 Category Recommendations](assets/7_figure7_category_recommendations.png)
+![Figure 7 Category Recommendations](Results/Graphs/category_recommendation.png)
 
 Recommendations for Toy Story broken down by all 8 feature categories — genres, cast, director, keywords, production, country, sequel, and voting count. Replicates Figure 7 from the paper.
 
@@ -191,21 +183,21 @@ Recommendations for Toy Story broken down by all 8 feature categories — genres
 
 ## 6. Sentiment Classifier Results — Table 3 Replication
 
-![Classifier Comparison](assets/8_classifier_comparison.png)
+![Classifier Comparison](Results/Graphs/Classifier_comparison.png)
 
-![Precision Recall AUC](assets/9_precision_recall_auc.png)
+![Precision Recall AUC](Results/Graphs/precision_recall_auc.png)
 
 ### Raw Results (Before Threshold Tuning)
 
-![Raw Classifier Results](assets/12_classifier_raw_results.png)
+![Raw Classifier Results](Results/Main%20Tables/classifier_raw_reults_table.png)
 
 ### After Threshold Tuning
 
-![Threshold Tuning](assets/13_threshold_tuning.png)
+![Threshold Tuning](Results/Main%20Tables/classifier_tuning_table.png)
 
 ### Final Comparison — Our Results vs Paper Table 3
 
-![Final Comparison Table 3](assets/14_final_comparison_table3.png)
+![Final Comparison Table 3](Results/Main%20Tables/final_comparison_table.png)
 
 | Algorithm | Our Accuracy | Paper Accuracy | Our Precision | Paper Precision | Our Recall | Paper Recall | Our AUC | Paper AUC |
 |---|---|---|---|---|---|---|---|---|
@@ -227,7 +219,7 @@ Recommendations for Toy Story broken down by all 8 feature categories — genres
 
 ## 7. Final Project Replication Report
 
-![Project Replication Report](assets/15_project_replication_report.png)
+![Project Replication Report](Results/Main%20Tables/project_report_table.png)
 
 ---
 
@@ -282,23 +274,23 @@ pip install -r requirements.txt
 
 **3. Upload TMDB files manually**
 
-The TMDB dataset requires a Kaggle account. Download these two files manually and upload them to your Colab session:
+The TMDB dataset requires a Kaggle account. Download these two files and upload them to your Colab session root:
 - `tmdb_5000_movies.csv`
 - `tmdb_5000_credits.csv`
 
 Download from: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
 
-**4. Open the notebook in Google Colab**
+**4. Open the notebook**
 
-Upload `RS_Mini_Project.ipynb` to Google Colab and run all cells in order.
+Upload `Src/RS_Mini_Project.ipynb` to Google Colab and run all cells in order from top to bottom.
 
 **5. Automatic downloads**
 
-The notebook automatically downloads MovieLens 1M and IMDB 50K reviews in Cell 2. No manual action needed for these.
+The notebook automatically downloads MovieLens 1M and IMDB 50K reviews in Cell 2. No manual action needed for these two datasets.
 
 **6. Runtime**
 
-Total runtime is approximately 15-20 minutes including NMF factorization and Random Forest training with 500 trees.
+Total runtime is approximately 15-20 minutes including NMF factorization and Random Forest training.
 
 ---
 
@@ -306,7 +298,7 @@ Total runtime is approximately 15-20 minutes including NMF factorization and Ran
 
 This project successfully replicates all major results of the paper. All 5 stages were implemented — feature extraction, 18-group multi-clustering, Table 2 cluster similarity table, KNN recommendation engine with Figure 7 category breakdown, and Table 3 sentiment classifier evaluation.
 
-The primary proposed Naive Bayes model achieved **86.65% accuracy** versus the paper's **88.31%** — a difference of only **1.66%**. SVM achieved **89.82% accuracy**, exceeding the paper's reported **87.33%**. Overall **12 out of 20** classifier metrics fell within 3% of the paper's values and **14 out of 20** within 5%.
+The primary proposed Naive Bayes model achieved **86.65% accuracy** versus the paper's **88.31%** — a difference of only **1.66%**. SVM achieved **88.82% accuracy**, exceeding the paper's reported **87.33%**. Overall **12 out of 20** classifier metrics fell within 3% of the paper's values and **14 out of 20** within 5%.
 
 ---
 
