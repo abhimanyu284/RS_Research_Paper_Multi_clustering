@@ -1,6 +1,5 @@
 # Implementation of a Collaborative Recommendation System Based on Multi-Clustering
 
-This repository presents a complete replication of:
 **I built a movie recommendation system that groups 901 movies into 18 clusters using K-Means and recommends movies using KNN within clusters, validated by a Naive Bayes,SVM, Random-Forest sentiment classifier that achieves 86% - 90% accuracy matching the paper within 1-3% of difference with SVM giving the highest accuracy matching the paper's accuracy. **
 
 **Implementation of a Collaborative Recommendation System Based on Multi-Clustering**  
