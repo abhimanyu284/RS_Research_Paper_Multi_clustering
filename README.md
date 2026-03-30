@@ -1,6 +1,6 @@
 # Implementation of a Collaborative Recommendation System Based on Multi-Clustering
 
-I built a movie recommendation system in three stages using 3 datasets: converting movie data into numerical features, clustering 901 movies into 18 groups using K-Means to narrow recommendations, and training a Naive Bayes, SVM, Random-Forest sentiment classifier on 50,000 reviews achieving 86.66% accuracy (close to the paper’s 88%).
+I have built a movie recommendation system in three stages using 3 datasets: converting movie data into numerical features, clustering 901 movies into 18 groups using K-Means to narrow recommendations, and training a Naive Bayes, SVM, Random-Forest sentiment classifier on 50,000 reviews achieving 86.66% accuracy (close to the paper’s 88%).
 I replaced Weighted Matrix Factorization with NMF for better computational efficiency without affecting results, while keeping all other components—8 features, 18 clusters, KNN recommendations, and 5 classifiers—consistent with the original paper and achieved the required efficiency with minimal changes.
 
 **Implementation of a Collaborative Recommendation System Based on Multi-Clustering**  
